@@ -2,7 +2,7 @@ import cv2
 cap = cv2.VideoCapture('video.avi')
 car_cascade = cv2.CascadeClassifier('cars.xml')
 while True:
-    ret, Frame = cap.read()
+    ret, frames = cap.read()
     gray = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)
     cars = car_cascade.detectMultiscale(gray, 1.1, 1)
     for (x,y,w,h) in cars:
